@@ -1,0 +1,184 @@
+<html>
+    <head>
+        <title>Alumnos</title>
+        <!-- Lineas de codigos de boostrap cdn-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, charset=UTF-8">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+        <style>
+            .fondo{
+                background-color: rgb(39, 39, 39);
+                color:aliceblue;
+            }
+
+            .bordePanel{
+                margin-left: 40px;
+                margin-right: 40px;
+                border: 1px solid gainsboro;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse"> <!-- Permite configurar la parte de navegacion  del documento, clase navbar (de boostrap), para cambiar color usar la clase navbar-inverse da cierto estilo a la etiqueta nav-->
+         <!-- Tipo de contenido a trabajar que trabajará el nav, declararemos un div-->       
+            <div class="container-fluid"><!-- Clase no xclisvoa de nabar, es para que los elementos se distribuyan de manera fluida, filas se alinea, estruvtura el padding y el responsive, todas las clases tb trabajan modo responsivo-->
+            
+                <!--Ahora encabezado de navegación o de la barra-->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menuBarra"> <!-- data-toggle=collapse, osea que este colapsado, retraido, e data-target= (controla un div mas abajo del conrtol de la barra y AHI INDICAMOS EL NOMBRE DEL DIV )-->
+                    <!--Ahora ponemos iconos, fucnion de depelbar el incono de la barra del botoncito-->
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href=""><i class="glyphicon glyphicon-phone"></i></a>  <!--Iocono de la web, esta libreria nos permite tratar icons ocmo fuentes, la i refleja el icono, el icono no se pone cursivo-->
+                </div>
+                    <!-- Ahora escribimso cuerop de la barra, debe tener el mismo ID del data-target, para retraer o mostar las partes-->
+                <div class="collapse navbar-collapse" id="menuBarra"> <!-- De tipo collapse, colasapbel e ID debe ser el MISMO que pusmo en data-target, xq ese boon cotrolar a ese div-->
+                    <!-- Ahora para cada meni debe ser un objeto lista-->
+                    <ul class="nav navbar-nav">
+                        <!-- Cada elemento de li es un elemento, osea pongo una li por cada pate del emniu-->
+                        <li><a href="" class="active">Inicio</a></li> <!-- Si queir oque li este activo, le pongo classe llamada ACTIVE, apra que una pcion destaue sobre la otra-->
+                        <!-- UNa opcion que tiene dropbow-->
+                        <li class="dropdown"> <!-- Controlamos este dropdonw con una a-->
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><!-- Y loe ponemos un data-toggle de comportamiento, LE PODEMOS AGREGAR un href si queremos, yo le puse href="#" para q salga lamno"-->
+                                <!-- Para indicar una flechita al usuario con una flechita que tiene un submenu-->
+                                Acceso 1 <span class="caret"></span>
+                                <!-- Ahora opciones, UL como menu de dropdown y DENTRO DE esrta los submentus en LI-->
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Acceso 1-1</a></li>
+                                    <li><a href="#">Acceso 1-2</a></li>
+                                    <li><a href="#">Acceso 1-3</a></li>
+                                </ul>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div> 
+        </nav>
+        
+        <!-- Col o CL nos permite diseñra la pagian en MODO de cuadros, que se descopmonente del 1 al 12, a medida que copmlete del 1 al12, uno al lado del orto o abajo-->
+        <!-- OSEA 12 es el ANCHO DE LA PANTALLA, cada div suma-->
+        <!-- Si pongo 5, el resto es 12?-->
+        <div class="bordePanel col-lg-5 col-md-offset-12 col-sm-offset-12 col-xs-offset-12"> <!-- lg controla el LARGo, cuando trabajms ocon DESKTOP, en destkop son resulconi LG, tablem md, telefonos SM-->
+            <!-- osea col-lg-5 es destkop sera 5, col-md-12 en telefon es 12-->
+
+            <h4><b>Registre Alumno</b></h4>
+            <form action="controlUsuario.php" method="POST">
+                <!-- Para agrupar cosas del formuarlio podemos hacer un formgroup dentro de un div-->
+                <!-- Alineamo correcatmen tlas coas de un formulario-->
+                <div class="form-group">
+                    <label for="txtRut">Rut:</label>
+                    <input type="text" name="rut" id="txtRut" class="form-control fondo" placeholder="Ingresa tu RUT">
+                    <!-- Clase ue ayuda a los aspectos de formulario y funciona apra casi todo los inut : form-comntrol-->
+                    <!-- Aca le ponemos otra clase PROPIa llamada fondo, para dejar un fodor propio-->
+                </div>
+                
+                <!-- AHORA UN DIV PARA CADA GRUPO DE CONTROLES-->
+                <div class="form-group">
+                    <label for="txtNombre1">Primer Nombre:</label>
+                    <input type="text" name="nombre1" id="txtNombre1" class="form-control" placeholder="Ingresa tu Primer Nombre">
+                 </div>
+
+                <div class="form-group">
+                    <label for="txtNombre2">Segundo Nombre:</label>
+                    <input type="text" name="nombre2" id="txtNombre2" class="form-control" placeholder="Ingresa tu Segundo Nombre">
+                 </div>
+                
+                <div class="form-group">
+                    <label for="txtApellido1">Primer Apellido:</label>
+                    <input type="text" name="apellido1" id="txtApellido1" class="form-control" placeholder="Ingresa tu Primer Apellido">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtApellido2">Segundo Apellido:</label>
+                    <input type="text" name="apellido2" id="txtApellido2" class="form-control" placeholder="Ingresa tu Segundo Apellido">
+                </div>
+
+                <div class="form-group">
+                    <label for="dpCursos">Cursos</label>
+                    <select class="form-control" name="cursos" id="dpCursos">
+                        <option value="1">EIT-001-PROGRAMACIÓN</option>
+                        <option value="2">EIT-002-BASE DE DATOS</option>
+                        <option value="3">EIT-003-IOT</option>
+                        <option value="4">EIT-004-REDES</option>
+                        <option value="5">EIT-005-SEGURIDAD</option>
+                    </select>
+                </div>
+
+                <div class="checkbox">
+                    <label><input type="checkbox" name="tieneCuenta" id="chkCuenta">Tiene Cuenta</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Registrar</button>
+                <button type="button" class="btn btn-default">Cancelar</button>
+            </form>
+        </div>
+        <!-- Si solo dejo lg, las demas resoluciones se rtansforman en 12 POR DEFECTO-->
+
+        <!-- Haremos 2 dos de 5 -->
+        <div class="col-lg-5  col-md-offset-12 col-sm-offset-12 col-xs-offset-12 bordePanel">
+            <!-- EL OFFSET RESPETA EL MARGIN!-->
+            <h4><b>Lista de Alumnos Registrados</b></h4>
+            <table class="table table-hover"> <!-- Con un solo objeto de boostrap cambiamos el table-->
+                <thead>
+                    <tr>
+                        <th>Rut</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Curso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1-9</td>
+                        <td>Juan Diego</td>
+                        <td>Carrasco Navarro</td>
+                        <td>EIT-001-PROGRAMACIÓN</td>
+                    </tr>
+                    <tr>
+                        <td>1-9</td>
+                        <td>Juan Diego</td>
+                        <td>Carrasco Navarro</td>
+                        <td>EIT-001-PROGRAMACIÓN</td>
+                    </tr>
+                    <tr>
+                        <td>1-9</td>
+                        <td>Juan Diego</td>
+                        <td>Carrasco Navarro</td>
+                        <td>EIT-001-PROGRAMACIÓN</td>
+                    </tr>
+                    <tr>
+                        <td>1-9</td>
+                        <td>Juan Diego</td>
+                        <td>Carrasco Navarro</td>
+                        <td>EIT-001-PROGRAMACIÓN</td>
+                    </tr>
+                    <tr>
+                        <td>1-9</td>
+                        <td>Juan Diego</td>
+                        <td>Carrasco Navarro</td>
+                        <td>EIT-001-PROGRAMACIÓN</td>
+                    </tr>
+                    <tr>
+                        <td>1-9</td>
+                        <td>Juan Diego</td>
+                        <td>Carrasco Navarro</td>
+                        <td>EIT-001-PROGRAMACIÓN</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+            
+        </div>
+    
+    </body>
+
+
+</html>
