@@ -20,5 +20,5 @@
     }catch(PDOException $pe){
         echo "Registrado Incorrectamente!";
     }
-    
+
 ?>

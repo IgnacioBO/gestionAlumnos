@@ -114,7 +114,8 @@
                 <div class="checkbox">
                     <label><input type="checkbox" name="tieneCuenta" id="chkCuenta">Tiene Cuenta</label>
                 </div>
-
+                <input type="hidden" name="eliminar" id="idHiddenCRUD"> <!--Tipo Hidden, va a ser leido cuando hagamos el motodo POST y podemos elegir entre ingresar y actualizar-->
+                <!-- Hidden por lo general SON PARA MANTEANER PROCESOS, por ejemplo selecion de FILA e ID, de un rut, de un parametro, o id, que es un control CREADO POR EL PROGRAMADOR-->
                 <button type="submit" class="btn btn-primary">Registrar</button>
                 <button type="button" class="btn btn-default">Cancelar</button>
             </form>
